@@ -263,7 +263,7 @@ class MonthlyViewController: UIViewController, UITableViewDelegate, UITableViewD
     //Action for attempting to save a new category if it has a unique name
     @IBAction func submitNewCategory(_ sender: Any) {
         
-        if !(categoryName.text == nil){
+        if !(categoryName.text == ""){
             if !(thisMonth.map{ ($0.value(forKey: "category") as? String)?.trimmingCharacters(in: CharacterSet.whitespaces).uppercased() }.contains(categoryName.text?.trimmingCharacters(in: CharacterSet.whitespaces).uppercased())){
                 //print(categoryColour.selectedColor?. as? String ?? "NA")
                 save(category: categoryName.text!.trimmingCharacters(in: CharacterSet.whitespaces), icon: "circle.fill", colour: categoryColour.selectedColor ?? UIColor(ciColor: .gray)/*, spent: 0*/)
