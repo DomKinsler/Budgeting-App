@@ -77,6 +77,7 @@ class MonthlyViewController: UIViewController, UITableViewDelegate, UITableViewD
             update(category: "Other", spent: toAlocate)
             fetchData(fetchYear: year, fetchMonth: month)
             tableView.reloadData()
+            updateTotal()
         } catch let error as NSError {
             print("Could not delete. \(error), \(error.userInfo)")
         }
@@ -206,6 +207,8 @@ class MonthlyViewController: UIViewController, UITableViewDelegate, UITableViewD
         year = dateFormatter.string(from: Date())
         dateFormatter.dateFormat = "MM"
         month = dateFormatter.string(from: Date())
+        
+        month = "03"
         
         fetchData(fetchYear: year, fetchMonth: month)
         
